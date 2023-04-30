@@ -86,7 +86,9 @@ self.GetStringFromTimestamp = function(timestamp) {
         ss = "0" + ss;
     }
     
-    return $"{hh}:{mm}:{ss} {era} - {timestamp.day} {months[timestamp.month]} {timestamp.year}";
+    // put the date stamp first because it doesn't change as quickly and the
+    // string width doesn't jump around as much
+    return $"{timestamp.day} {months[timestamp.month]} {timestamp.year} - {hh}:{mm}:{ss} {era}";
 };
 
 self.ValidateSurface = function(surface, w, h) {
