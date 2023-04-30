@@ -29,6 +29,7 @@
     {"name":"scribble_anim_pulse","order":3,"path":"scripts/scribble_anim_pulse/scribble_anim_pulse.yy",},
     {"name":"scribble_font_add_msdf","order":3,"path":"scripts/scribble_font_add_msdf/scribble_font_add_msdf.yy",},
     {"name":"scribble_flush_everything","order":1,"path":"scripts/scribble_flush_everything/scribble_flush_everything.yy",},
+    {"name":"fnt_timestamp","order":3,"path":"fonts/fnt_timestamp/fnt_timestamp.yy",},
     {"name":"__scribble_get_glyph_data","order":10,"path":"scripts/__scribble_get_glyph_data/__scribble_get_glyph_data.yy",},
     {"name":"__scribble_gen_10_set_padding_flags","order":1,"path":"scripts/__scribble_gen_10_set_padding_flags/__scribble_gen_10_set_padding_flags.yy",},
     {"name":"__scribble_gen_5_finalize_bidi","order":5,"path":"scripts/__scribble_gen_5_finalize_bidi/__scribble_gen_5_finalize_bidi.yy",},

@@ -1,3 +1,6 @@
+scribble_font_bake_outline_8dir_2px("fnt_timestamp", "fnt_timestamp_outlined", c_black, true);
+scribble_font_set_default("fnt_timestamp_outlined");
+
 var source = get_open_filename("Image files|*.jpg;*.png;*.bmp", "image.png");
 var path = filename_path(source);
 var ext = filename_ext(source);
