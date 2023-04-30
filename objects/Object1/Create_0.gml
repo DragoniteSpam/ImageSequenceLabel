@@ -42,6 +42,47 @@ self.GetTimestampFromFilename = function(filename) {
     };
 };
 
+self.GetStringFromTimestamp = function(timestamp) {
+    static months = [
+        "",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    
+    var era = timestamp.hour < 12 ? "AM" : "PM";
+    
+    if (timestamp.hour < 1) {
+        timestamp.hour += 12;
+    } else if (timestamp.hour >= 13) {
+        timestamp.hour -= 12;
+    }
+    
+    var hh = string(floor(timestamp.hour));
+    if (string_length(hh) < 2) {
+        hh = "0" + hh;
+    }
+    var mm = string(floor(timestamp.minute));
+    if (string_length(mm) < 2) {
+        mm = "0" + mm;
+    }
+    var ss = string(floor(timestamp.second));
+    if (string_length(ss) < 2) {
+        ss = "0" + ss;
+    }
+    
+    return $"{hh}:{mm}:{ss} {era} - {timestamp.day} {months[timestamp.month]} {timestamp.year}";
+};
+
 self.ValidateSurface = function(surface, w, h) {
     if (surface_exists(surface)) {
         if (surface_get_height(surface) != h) {
