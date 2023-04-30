@@ -100,6 +100,7 @@
     {"name":"__scribble_get_effects_map","order":5,"path":"scripts/__scribble_get_effects_map/__scribble_get_effects_map.yy",},
     {"name":"__scribble_class_event","order":1,"path":"scripts/__scribble_class_event/__scribble_class_event.yy",},
     {"name":"scribble_external_sound_exists","order":1,"path":"scripts/scribble_external_sound_exists/scribble_external_sound_exists.yy",},
+    {"name":"Object1","order":2,"path":"objects/Object1/Object1.yy",},
     {"name":"__scribble_get_krutidev_matra_lookup_map","order":12,"path":"scripts/__scribble_get_krutidev_matra_lookup_map/__scribble_get_krutidev_matra_lookup_map.yy",},
     {"name":"scribble","order":10,"path":"scripts/scribble/scribble.yy",},
     {"name":"string_width_scribble_ext","order":6,"path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},
