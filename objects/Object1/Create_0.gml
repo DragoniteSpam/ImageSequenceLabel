@@ -3,10 +3,10 @@ var path = filename_path(source);
 var ext = filename_ext(source);
 
 self.file_list = ds_queue_create();
+self.surface = -1;
 
 var file = file_find_first(path + "*" + ext, fa_none);
 while (file != "") {
-    show_debug_message(self.GetTimestampFromFilename(file));
     ds_queue_enqueue(self.file_list, path + file);
     file = file_find_next();
 }
@@ -37,4 +37,20 @@ self.GetTimestampFromFilename = function(filename) {
         minute: real(time_partition[1]),
         second: real(time_partition[2])
     };
+};
+
+self.ValidateSurface = function(surface, w, h) {
+    if (surface_exists(surface)) {
+        if (surface_get_height(surface) != h) {
+            surface_free(surface);
+        } else if (surface_get_width(surface) != w) {
+            surface_free(surface);
+        }
+    }
+    
+    if (!surface_exists(surface)) {
+        surface = surface_create(w, h);
+    }
+    
+    return surface;
 };
