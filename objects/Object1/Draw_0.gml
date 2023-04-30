@@ -1,6 +1,6 @@
 if (!ds_queue_empty(self.file_list)) {
     var filename = ds_queue_dequeue(self.file_list);
-    var sprite = sprite_add(filename, 0, false, false, 0, 0);
+    var sprite = sprite_add(filename.input, 0, false, false, 0, 0);
     
     var timestamp = self.GetTimestampFromFilename(filename);
     var label = self.GetStringFromTimestamp(timestamp);
@@ -18,6 +18,8 @@ if (!ds_queue_empty(self.file_list)) {
     
     surface_reset_target();
     sprite_delete(sprite);
+    
+    surface_save(self.surface, filename.output);
 }
 
 if (surface_exists(self.surface)) {

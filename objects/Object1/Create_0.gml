@@ -3,14 +3,20 @@ scribble_font_set_default("fnt_timestamp_outlined");
 
 var source = get_open_filename("Image files|*.jpg;*.png;*.bmp", "image.png");
 var path = filename_path(source);
+var output_path = path + "output/";
 var ext = filename_ext(source);
+
+directory_create(output_path);
 
 self.file_list = ds_queue_create();
 self.surface = -1;
 
 var file = file_find_first(path + "*" + ext, fa_none);
 while (file != "") {
-    ds_queue_enqueue(self.file_list, path + file);
+    ds_queue_enqueue(self.file_list, {
+        input: path + file,
+        output: output_path + filename_change_ext(file, ".png")         // would be nice if we could write out a jpeg, but whatever
+    });
     file = file_find_next();
 }
 file_find_close();
