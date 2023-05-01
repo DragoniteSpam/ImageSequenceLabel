@@ -10,6 +10,7 @@ directory_create(output_path);
 
 self.file_list = ds_queue_create();
 self.surface = -1;
+self.error_report = "";
 
 var file = file_find_first(path + "*" + ext, fa_none);
 while (file != "") {
