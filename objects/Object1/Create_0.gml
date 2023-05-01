@@ -75,9 +75,7 @@ self.GetStringFromTimestamp = function(timestamp) {
     }
     
     var hh = string(floor(timestamp.hour));
-    if (string_length(hh) < 2) {
-        hh = "0" + hh;
-    }
+    
     var mm = string(floor(timestamp.minute));
     if (string_length(mm) < 2) {
         mm = "0" + mm;
