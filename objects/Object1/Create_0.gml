@@ -68,6 +68,11 @@ self.GetStringFromTimestamp = function(timestamp) {
     
     static first_datetime = undefined;
     
+    var current_datetime = date_create_datetime(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute, timestamp.second);
+    first_datetime ??= current_datetime;
+    
+    var days_elapsed = floor(date_day_span(first_datetime, current_datetime)) + 1;
+    
     var era = timestamp.hour < 12 ? "AM" : "PM";
     
     if (timestamp.hour < 1) {
@@ -86,11 +91,6 @@ self.GetStringFromTimestamp = function(timestamp) {
     if (string_length(ss) < 2) {
         ss = "0" + ss;
     }
-    
-    var current_datetime = date_create_datetime(timestamp.year, timestamp.month, timestamp.day, timestamp.hour, timestamp.minute, timestamp.second);
-    first_datetime ??= current_datetime;
-    
-    var days_elapsed = floor(date_day_span(first_datetime, current_datetime)) + 1;
     
     // put the date stamp first because it doesn't change as quickly and the
     // string width doesn't jump around as much
