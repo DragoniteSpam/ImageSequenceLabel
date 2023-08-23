@@ -18,7 +18,7 @@ try {
         var label = self.GetStringFromTimestamp(timestamp);
         
         //self.surface = self.ValidateSurface(self.surface, sprite_get_width(sprite), sprite_get_height(sprite));
-        self.surface = self.ValidateSurface(self.surface, 1080, 360);
+        self.surface = self.ValidateSurface(self.surface, 1280, 360);
         
         surface_set_target(self.surface);
         //draw_clear(c_black);
@@ -26,9 +26,10 @@ try {
         
         //draw_sprite(sprite, 0, 0, 0);
         
-        scribble(label)
-            .align(fa_left, fa_top)
-            .draw(32, 32);
+        draw_set_font(fnt_timestamp);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+        draw_text(32, 32, label);
         
         surface_reset_target();
         //sprite_delete(sprite);

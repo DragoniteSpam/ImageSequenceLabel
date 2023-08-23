@@ -1,6 +1,3 @@
-scribble_font_bake_outline_8dir_2px("fnt_timestamp", "fnt_timestamp_outlined", c_black, true);
-scribble_font_set_default("fnt_timestamp_outlined");
-
 var source = get_open_filename("Image files|*.jpg;*.png;*.bmp", "image.png");
 var path = filename_path(source);
 var output_path = path + "output/";
@@ -112,3 +109,15 @@ self.ValidateSurface = function(surface, w, h) {
     
     return surface;
 };
+
+font_enable_effects(fnt_timestamp, true, {
+    outlineEnable: true,
+    outlineDistance: 6,
+    outlineColour: c_black,
+    outlineAlpha: 1,
+    /*
+    glowEnable: true,
+    glowStart: 0,
+    glowEnd: 20,
+    glowAlpha: 1*/
+});
